@@ -3,16 +3,15 @@
 This program is a multi-threaded memory-safe status monitor written in Rust.
 It updates the status only when there is a change.
 
+## Example screenshots
+
 ![example](./screenshots/screenshot_1.png)
 
 ## Installation
 
-First, clone this repository.
-```
-git clone https://gitlab.com/mhdy/mblocks.git
-```
+Clone the repository
 
-Then, configure the status blocks by editing `src/config.rs`.
+Configure the status blocks by editing `src/config.rs`.
 
 Next, build a release binary.
 ```
@@ -26,7 +25,6 @@ Finally, move the executable to one directory of your PATH directories, and add 
 ## Configuration
 
 The status monitor can be configured directly in the source `src/config.rs`.
-Examples of `src/config.rs` can be found [here](https://gitlab.com/mhdy/mblocks/-/blob/master/src/config.rs) and [here](https://gitlab.com/mhdy/mde/-/blob/master/mblocks/src/config.rs).
 
 Status blocks are defined in the `BLOCKS` vector.
 Each block has a kind, executes a command, and has a prefix and a suffix for formatting.
@@ -55,6 +53,10 @@ The generated status starts with the value of the variable `PREFIX` and ends wit
 - If a `Function` command returns `None`, then `failed` will be shown in the status (in the corresponding block).
 - mblocks is memory-safe; it is validated with valgrind. The memory leaks shown by valgrind are false positives related to the signal-hook crate.
 
+## Credits
+
+Forked from [this repo](https://gitlab.com/mhdy/mblocks.git).
+
 ## License
 
-MIT.
+MIT
