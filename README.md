@@ -13,14 +13,13 @@ Clone the repository
 
 Configure the status blocks by editing `src/config.rs`.
 
-Next, build a release binary.
-```
-cargo build --release
+Run the install command.
+
+```bash
+make clean install
 ```
 
-If the build succeeds, the binary can be found in `target/release/mblocks`.
-
-Finally, move the executable to one directory of your PATH directories, and add `mblocks &` to your `~/.xinitrc`.
+Add `mblocks &` to your `~/.xinitrc` or another shell script that will be run on boot.
 
 ## Configuration
 
