@@ -14,13 +14,12 @@ pub fn memory_used() -> Result<Box<dyn Display>, Box<dyn Error>> {
 
 pub fn memory_usage() -> Result<Box<dyn Display>, Box<dyn Error>> {
     let vm = virtual_memory()?;
-    let avail = (vm.available() as f64 * 10.0 / 1073741824.0).round() / 10.0;
+    let total = (vm.total() as f64 * 10.0 / 1073741824.0).round() / 10.0;
     let used = (vm.used() as f64 * 10.0 / 1073741824.0).round() / 10.0;
     Ok(Box::new(concat_string!(
-        "U: ",
         used.to_string(),
-        "G - A: ",
-        avail.to_string(),
+        "G / ",
+        total.to_string(),
         "G"
     )))
 }
