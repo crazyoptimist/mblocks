@@ -14,7 +14,7 @@ pub const SUFFIX: &str = " ";
 pub const BLOCKS: &[Block] = &[
     Block {
         kind: PeriodicOrSignal(5, 1),
-        command: Shell(&["date", "+%I:%M %p %Z, %b %d, %Y (%A)"]),
+        command: Shell(&["date", "+%I:%M %p %Z, %Y-%m-%d (%a)"]),
         prefix: PREFIX,
         suffix: "",
     },
@@ -29,11 +29,5 @@ pub const BLOCKS: &[Block] = &[
         command: Function(cpu_usage),
         prefix: "CPU: ",
         suffix: "%",
-    },
-    Block {
-        kind: Once,
-        command: Shell(&["whoami"]),
-        prefix: "",
-        suffix: "",
     },
 ];
